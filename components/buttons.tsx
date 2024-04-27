@@ -17,8 +17,8 @@ export function GoogleSigninButton() {
 		);
 	}
 
-	return <button onClick={() => signIn("google")}>
-        <Image src="google-logo.svg" width={48} height={48} alt="Google logo"></Image>
+	return <button className="btn btn-neutral" onClick={() => signIn("google")}>
+        <Image src="google-logo.svg" width={30} height={30} alt="Google logo"></Image>
         Entrar com o Google
     </button>;
 }
@@ -37,8 +37,8 @@ export function FacebookSigninButton() {
 		);
 	}
 
-	return <button onClick={() => signIn("facebook")}>
-        <Image src="facebook-novo.svg" width={48} height={48} alt="Facebook logo"/>
+	return <button className="btn btn-neutral text-left" onClick={() => signIn("facebook")}>
+        <Image src="facebook-novo.svg" width={35} height={35} alt="Facebook logo"/>
         Entrar com o Facebook
         </button>;
 }
