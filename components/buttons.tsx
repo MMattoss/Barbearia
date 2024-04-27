@@ -1,25 +1,48 @@
-'use client'
-import { useSession, signIn, signOut } from "next-auth/react"
+"use client";
+import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function GoogleSigninButton() {
+export function GoogleSigninButton() {
+	const { data: session, status } = useSession();
+
+	if (status === "loading") {
+		<>...</>;
+	}
+	if (status === "authenticated") {
+		return (
+			<>
+				<SignOutButton />
+			</>
+		);
+	}
+
+	return <button onClick={() => signIn("google")}>
+        <Image src="google-logo.svg" width={48} height={48} alt="Google logo"></Image>
+        Entrar com o Google
+    </button>;
+}
+
+export function FacebookSigninButton() {
     const { data: session, status } = useSession();
 
-    if (status === 'loading') {
-        <>...</>
-    }
-    if (status === 'authenticated') {
-        return (
-            <>
-                <SignOutButton />
-            </>
-        )
-    }
+    if (status === "loading") {
+		<>...</>;
+	}
+	if (status === "authenticated") {
+		return (
+			<>
+				<SignOutButton />
+			</>
+		);
+	}
 
-    return <button onClick={()=> signIn('google')}>Sign in</button>
+	return <button onClick={() => signIn("facebook")}>
+        <Image src="facebook-novo.svg" width={48} height={48} alt="Facebook logo"/>
+        Entrar com o Facebook
+        </button>;
 }
 
 export function SignOutButton() {
-    return <button onClick={()=> signOut()}>Sign out</button>
+	return <button onClick={() => signOut()}>Sign out</button>;
 }
