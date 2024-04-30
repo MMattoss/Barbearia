@@ -47,4 +47,3 @@ export function SignOutButton() {
 	return <button onClick={() => signOut()}>Sign out</button>;
 }
 
-// Olá mundo
