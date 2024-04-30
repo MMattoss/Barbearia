@@ -9,23 +9,10 @@ export default function Navbar() {
 				<a className="btn btn-ghost text-xl">Barbearia</a>
 			</div>
 			<div className="flex-none gap-2">
-				<div className="dropdown dropdown-hover dropdown-end">
-					<div tabIndex={0} role="button" className="btn m-1">
-						Entrar
-					</div>
-					<ul
-						tabIndex={0}
-						className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-64"
-					>
-						<li>
-							<GoogleSigninButton />
-						</li>
-						<li>
-							<FacebookSigninButton />
-						</li>
-					</ul>
-				</div>
-				<AuthCheck>
+				<Link href="/registrar">Cadastre-se</Link>
+				<Link href="/entrar">Entrar</Link>
+
+				{/* <AuthCheck>
 					<div className="dropdown dropdown-end">
 						<div
 							tabIndex={0}
@@ -57,7 +44,7 @@ export default function Navbar() {
 							</li>
 						</ul>
 					</div>
-				</AuthCheck>
+				</AuthCheck> */}
 			</div>
 		</div>
 	);
